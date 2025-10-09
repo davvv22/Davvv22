@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Page — Davvv Ganteng</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payment Page — Davvv Ganteng</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <audio id="bgMusic" autoplay loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung audio.
-    </audio>
-
-    <header class="header">
-        <h1 class="title">Payment Page — Davvv Ganteng</h1>
-    </header>
-
-    <main class="payment-container">
-        <div class="payment-card" data-method="dana">
-            <div class="logo-placeholder">DANA</div>
-            <div class="qr-placeholder"></div>
-            <p class="account-number">089616048908</p>
-            <button class="copy-btn">Salin Nomor</button>
-            <span class="copied-tooltip">Copied!</span>
+  <div class="container">
+    <h1 class="title">Payment Page — Davvv Ganteng</h1>
+    
+    <div class="cards">
+      <div class="card">
+        <div class="method-header">
+          <img src="https://via.placeholder.com/60?text=DANA" alt="DANA Logo" class="logo" />
+          <h2>DANA</h2>
         </div>
-
-        <div class="payment-card" data-method="gopay">
-            <div class="logo-placeholder">GoPay</div>
-            <div class="qr-placeholder"></div>
-            <p class="account-number">089616048908</p>
-            <button class="copy-btn">Salin Nomor</button>
-            <span class="copied-tooltip">Copied!</span>
+        <div class="qr-container">
+          <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR DANA" class="qr" />
         </div>
-
-        <div class="payment-card" data-method="ovo">
-            <div class="logo-placeholder">OVO</div>
-            <div class="qr-placeholder"></div>
-            <p class="account-number">082310169042</p>
-            <button class="copy-btn">Salin Nomor</button>
-            <span class="copied-tooltip">Copied!</span>
+        <div class="account-info">
+          <p class="number" id="dana-number">089616048908</p>
+          <button class="copy-btn" data-number="089616048908" aria-label="Salin nomor DANA">Salin Nomor</button>
+          <span class="copy-feedback"></span>
         </div>
-    </main>
+      </div>
+      
+      <div class="card">
+        <div class="method-header">
+          <img src="https://via.placeholder.com/60?text=GoPay" alt="GoPay Logo" class="logo" />
+          <h2>GoPay</h2>
+        </div>
+        <div class="qr-container">
+          <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR GoPay" class="qr" />
+        </div>
+        <div class="account-info">
+          <p class="number" id="gopay-number">089616048908</p>
+          <button class="copy-btn" data-number="089616048908" aria-label="Salin nomor GoPay">Salin Nomor</button>
+          <span class="copy-feedback"></span>
+        </div>
+      </div>
 
-    <footer class="footer">
-        <button id="changeBgBtn" class="change-bg-btn">Ganti Latar</button>
-    </footer>
+      <div class="card">
+        <div class="method-header">
+          <img src="https://via.placeholder.com/60?text=OVO" alt="OVO Logo" class="logo" />
+          <h2>OVO</h2>
+        </div>
+        <div class="qr-container">
+          <img src="https://via.placeholder.com/150?text=QR+Code" alt="QR OVO" class="qr" />
+        </div>
+        <div class="account-info">
+          <p class="number" id="ovo-number">082310169042</p>
+          <button class="copy-btn" data-number="082310169042" aria-label="Salin nomor OVO">Salin Nomor</button>
+          <span class="copy-feedback"></span>
+        </div>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="controls">
+      <button id="change-bg-btn" aria-label="Ganti Latar">Ganti Latar</button>
+      <audio id="bg-music" src="music.mp3" preload="auto"></audio>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-</html>
+    </html>
