@@ -1,0 +1,227 @@
+/* Reset */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Colors */
+:root {
+  --dark-blue: #0a1a3f;
+  --vivid-purple: #7c3aed;
+  --black-elegant: #0f0e17;
+  --neon-blue: #3ee8fa;
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-blue), var(--black-elegant));
+  color: #ccc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(10, 26, 63, 0.35);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 0 25px var(--vivid-purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--vivid-purple);
+  text-shadow:
+    0 0 8px var(--vivid-purple),
+    0 0 20px var(--vivid-purple);
+  animation: glowingText 3s ease-in-out infinite alternate;
+}
+
+/* Glowing text animation */
+@keyframes glowingText {
+  0% { text-shadow: 0 0 8px var(--vivid-purple), 0 0 20px var(--vivid-purple);}
+  100% { text-shadow: 0 0 15px var(--neon-blue), 0 0 35px var(--neon-blue);}
+}
+
+/* Cards container */
+.cards {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card styling */
+.card {
+  background: rgba(24, 16, 47, 0.7);
+  border-radius: 18px;
+  box-shadow:
+    0 0 8px var(--vivid-purple),
+    inset 0 0 12px var(--neon-blue);
+  width: 280px;
+  padding: 1.6rem 1.2rem;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 0 18px var(--neon-blue),
+    inset 0 0 20px var(--vivid-purple);
+}
+
+/* Header inside card */
+.method-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px var(--neon-blue));
+}
+
+.method-header h2 {
+  font-size: 1.8rem;
+  letter-spacing: 0.04em;
+  color: var(--neon-blue);
+  text-shadow: 0 0 6px var(--vivid-purple);
+}
+
+/* QR code container */
+.qr-container {
+  margin-bottom: 1rem;
+}
+
+.qr {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px var(--vivid-purple),
+    inset 0 0 12px var(--neon-blue);
+  transition: transform 0.4s ease;
+}
+
+.qr:hover {
+  transform: scale(1.1);
+}
+
+/* Account info */
+.account-info {
+  text-align: center;
+  width: 100%;
+}
+
+.number {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+
+/* Copy button */
+.copy-btn {
+  background: transparent;
+  border: 2px solid var(--neon-blue);
+  color: var(--neon-blue);
+  padding: 0.5rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  box-shadow: 0 0 8px var(--neon-blue);
+}
+
+.copy-btn:hover {
+  background: var(--neon-blue);
+  color: var(--black-elegant);
+  box-shadow: 0 0 18px var(--vivid-purple), 0 0 45px var(--neon-blue);
+}
+
+.copy-feedback {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  height: 1.2rem;
+  color: var(--vivid-purple);
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+/* Controls */
+.controls {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#change-bg-btn {
+  background: linear-gradient(90deg, var(--vivid-purple), var(--neon-blue));
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow:
+    0 0 20px var(--vivid-purple),
+    0 0 40px var(--neon-blue);
+  transition: all 0.4s ease;
+}
+
+#change-bg-btn:hover {
+  filter: brightness(1.2);
+  box-shadow:
+    0 0 30px var(--neon-blue),
+    0 0 60px var(--vivid-purple);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
